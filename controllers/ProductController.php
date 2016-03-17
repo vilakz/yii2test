@@ -128,7 +128,7 @@ class ProductController extends Controller
      */
     public function actionTest2() {
         
-        $p = Product::find()->where([ '_eav' => [ '$size' => 0 ] ]);
+        $p = Product::find()->where([ '_eav.1' => [ '$exists' => true ] ]);
         
         $dataProvider = new ActiveDataProvider([
             'query' => $p,
